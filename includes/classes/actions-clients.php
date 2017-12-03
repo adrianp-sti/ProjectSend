@@ -50,7 +50,7 @@ class ClientActions
 		$this->name = $arguments['name'];
 		$this->email = $arguments['email'];
 		$this->password = $arguments['password'];
-		//$this->password_repeat = $arguments['password_repeat'];
+		$this->password_verify = $arguments['password_verify'];
 		$this->address = $arguments['address'];
 		$this->phone = $arguments['phone'];
 		$this->contact = $arguments['contact'];
@@ -107,7 +107,7 @@ class ClientActions
 			$valid_me->validate('password',$this->password,$validation_valid_pass.' '.$validation_valid_chars);
 			$valid_me->validate('pass_rules',$this->password,$validation_rules_pass);
 			$valid_me->validate('length',$this->password,$validation_length_pass,MIN_PASS_CHARS,MAX_PASS_CHARS);
-			//$valid_me->validate('pass_match','',$validation_match_pass,'','',$this->password,$this->password_repeat);
+			$valid_me->validate('pass_match','',$validation_match_pass,'','',$this->password,$this->password_verify);
 		}
 
 		if ( !empty($this->recaptcha) ) {
@@ -136,8 +136,7 @@ class ClientActions
 		$this->name				= encode_html($arguments['name']);
 		$this->email			= encode_html($arguments['email']);
 		$this->username		= encode_html($arguments['username']);
-		$this->password		= $arguments['password'];
-		//$this->password_repeat = $arguments['password_repeat'];
+		$this->password			= $arguments['password'];
 		$this->address			= encode_html($arguments['address']);
 		$this->phone			= encode_html($arguments['phone']);
 		$this->contact			= encode_html($arguments['contact']);

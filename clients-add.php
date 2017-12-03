@@ -49,7 +49,7 @@ if ($_POST) {
 							'id'			=> '',
 							'username'		=> $add_client_data_user,
 							'password'		=> $_POST['add_client_form_pass'],
-							//'password_repeat' => $_POST['add_client_form_pass2'],
+							'password_verify' 	=> $_POST['add_client_form_pass_verify'],
 							'name'			=> $add_client_data_name,
 							'email'			=> $add_client_data_email,
 							'address'		=> $add_client_data_addr,
